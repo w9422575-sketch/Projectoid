@@ -1,0 +1,526 @@
+{
+"domain": "CB1_SCRA_structure_activity_relationships",
+"purpose": "Educational SAR knowledge representation",
+"warning": "SAR observations are series-dependent and should not be treated as universal optimization rules",
+
+"targets": {
+"CB1": {
+"type": "GPCR",
+"family": "cannabinoid_receptor",
+"signaling": ["Gi/o"],
+"main_parameters": [
+"Ki",
+"EC50",
+"Emax",
+"binding_mode",
+"functional_activity"
+]
+}
+},
+
+"metrics": {
+"Ki": {
+"meaning": "binding_affinity",
+"interpretation": "lower_value_generally_means_higher_affinity"
+},
+"EC50": {
+"meaning": "functional_potency",
+"interpretation": "lower_value_generally_means_higher_potency",
+"caveat": "assay_dependent"
+},
+"Emax": {
+"meaning": "maximum_functional_response",
+"interpretation": "describes_efficacy",
+"caveat": "assay_and_system_dependent"
+},
+"efficacy_class": {
+"values": [
+"agonist",
+"partial_agonist",
+"full_agonist",
+"antagonist",
+"inverse_agonist"
+]
+}
+},
+
+"structural_features": {
+
+"core_scaffold": {
+"examples": [
+"indole",
+"indazole",
+"azaindole",
+"other_heteroaromatic_scaffolds"
+],
+"effects": [
+"changes_aromatic_geometry",
+"changes_electronic_distribution",
+"changes_hydrogen_bonding_pattern",
+"changes_receptor_interactions"
+],
+"scope": "family_dependent"
+},
+
+"nitrogen_count": {
+"examples": [
+"indole_has_one_ring_nitrogen",
+"indazole_has_two_ring_nitrogens"
+],
+"possible_effects": [
+"electronic_properties",
+"polarity",
+"hydrogen_bonding",
+"binding_geometry"
+],
+"scope": "scaffold_dependent"
+},
+
+"heteroatom_position": {
+"possible_effects": [
+"changes_electronic_distribution",
+"changes_H_bond_geometry",
+"changes_dipole",
+"changes_receptor_orientation"
+],
+"scope": "regioisomer_dependent"
+},
+
+"aromaticity": {
+"possible_effects": [
+"pi_interactions",
+"hydrophobic_interactions",
+"rigidity",
+"conformational_constraint"
+],
+"scope": "structure_dependent"
+},
+
+"aromatic_surface": {
+"possible_effects": [
+"hydrophobic_contact",
+"pi_interactions",
+"shape_complementarity"
+],
+"caveat": "larger_aromatic_surface_is_not_automatically_better"
+},
+
+"hydrophobic_domain": {
+"possible_effects": [
+"hydrophobic_binding",
+"membrane_partitioning",
+"distribution"
+],
+"caveat": "binding_affinity_and_membrane_partitioning_are_distinct_properties"
+},
+
+"lipophilicity": {
+"parameters": [
+"logP",
+"logD"
+],
+"possible_effects": [
+"membrane_partitioning",
+"distribution",
+"protein_binding",
+"BBB_permeability"
+],
+"caveat": "lipophilicity_alone_does_not_predict_CB1_affinity"
+},
+
+"polarity": {
+"parameters": [
+"TPSA",
+"hydrogen_bond_donor_count",
+"hydrogen_bond_acceptor_count"
+],
+"possible_effects": [
+"solubility",
+"membrane_permeability",
+"receptor_interactions",
+"distribution"
+]
+},
+
+"hydrogen_bond_donors": {
+"examples": [
+"NH",
+"OH"
+],
+"possible_effects": [
+"receptor_hydrogen_bonding",
+"polarity"
+],
+"scope": "position_and_geometry_dependent"
+},
+
+"hydrogen_bond_acceptors": {
+"examples": [
+"carbonyl_O",
+"ether_O",
+"heteroaromatic_N"
+],
+"possible_effects": [
+"receptor_hydrogen_bonding",
+"electronic_distribution"
+],
+"scope": "position_and_geometry_dependent"
+},
+
+"amide_linker": {
+"possible_effects": [
+"hydrogen_bonding",
+"dipole",
+"conformational_constraint",
+"orientation"
+],
+"scope": "series_dependent"
+},
+
+"ester_linker": {
+"possible_effects": [
+"polarity",
+"hydrogen_bond_acceptance",
+"flexibility",
+"metabolic_liability"
+],
+"scope": "series_dependent"
+},
+
+"carbonyl_group": {
+"possible_effects": [
+"dipole",
+"hydrogen_bond_acceptance",
+"molecular_orientation"
+]
+},
+
+"amine_functionality": {
+"possible_effects": [
+"basicity",
+"ionization",
+"hydrogen_bonding",
+"solubility"
+],
+"caveat": "ionization_state_depends_on_pH"
+},
+
+"halogenation": {
+"elements": [
+"F",
+"Cl",
+"Br",
+"I"
+],
+"possible_effects": [
+"electronic_effects",
+"lipophilicity",
+"polarizability",
+"metabolic_stability"
+],
+"caveat": "effect_depends_on_position_and_scaffold"
+},
+
+"fluorination": {
+"possible_effects": [
+"electronic_modulation",
+"lipophilicity_modulation",
+"metabolic_modulation"
+],
+"caveat": "fluorination_does_not_automatically_increase_affinity_or_potency"
+},
+
+"steric_bulk": {
+"possible_effects": [
+"binding_geometry",
+"conformational_preference",
+"receptor_fit"
+],
+"caveat": "steric_effect_is_position_dependent"
+},
+
+"molecular_flexibility": {
+"parameters": [
+"rotatable_bond_count",
+"ring_constraints"
+],
+"possible_effects": [
+"conformational_entropy",
+"binding_orientation",
+"receptor_fit"
+]
+},
+
+"molecular_shape": {
+"parameters": [
+"3D_shape",
+"elongation",
+"branching",
+"planarity"
+],
+"possible_effects": [
+"binding_site_complementarity",
+"ligand_orientation"
+]
+},
+
+"branching": {
+"possible_effects": [
+"steric_profile",
+"3D_shape",
+"hydrophobic_surface"
+],
+"scope": "substituent_dependent"
+},
+
+"chain_length": {
+"possible_effects": [
+"hydrophobic_surface",
+"flexibility",
+"receptor_fit",
+"membrane_partitioning"
+],
+"observation": "some_historical_indole_series_show_activity_dependence_on_hydrophobic_chain_length",
+"caveat": "the_relationship_is_not_a_universal_4_to_6_rule"
+},
+
+"chain_branching": {
+"possible_effects": [
+"steric_profile",
+"hydrophobicity",
+"conformational_preference"
+],
+"scope": "series_dependent"
+},
+
+"terminal_group": {
+"possible_effects": [
+"polarity",
+"hydrogen_bonding",
+"steric_profile",
+"metabolic_properties"
+]
+},
+
+"ring_substitution": {
+"possible_effects": [
+"electronics",
+"sterics",
+"lipophilicity",
+"binding_orientation"
+],
+"scope": "regioisomer_dependent"
+},
+
+"regiochemistry": {
+"definition": "position_of_substituents",
+"possible_effects": [
+"binding_geometry",
+"electronic_distribution",
+"steric_environment"
+],
+"importance": "high"
+},
+
+"stereochemistry": {
+"possible_effects": [
+"3D_binding_geometry",
+"receptor_selectivity",
+"functional_activity"
+],
+"caveat": "stereoisomers_can_have_different_pharmacology"
+},
+
+"conformational_constraint": {
+"examples": [
+"ring_fusion",
+"cyclic_linkers"
+],
+"possible_effects": [
+"reduced_conformational_entropy",
+"altered_binding_geometry"
+]
+}
+},
+
+"pharmacokinetic_properties": {
+
+"BBB_permeability": {
+"influenced_by": [
+"lipophilicity",
+"molecular_size",
+"polarity",
+"ionization",
+"hydrogen_bonding"
+],
+"caveat": "not_equivalent_to_CB1_affinity"
+},
+
+"membrane_partitioning": {
+"influenced_by": [
+"lipophilicity",
+"molecular_shape",
+"ionization"
+]
+},
+
+"protein_binding": {
+"possible_effects": [
+"free_fraction",
+"distribution",
+"duration"
+]
+},
+
+"metabolic_stability": {
+"influenced_by": [
+"ester_groups",
+"amide_groups",
+"benzylic_positions",
+"heteroatoms",
+"halogenation"
+],
+"caveat": "metabolic_effects_are_highly_structure_specific"
+},
+
+"active_metabolites": {
+"importance": "can_change_observed_pharmacology",
+"caveat": "parent_compound_activity_does_not_describe_total_exposure"
+}
+},
+
+"pharmacology_relationships": {
+
+"affinity_vs_potency": {
+"relationship": "Ki_and_EC50_measure_different_properties",
+"important": true
+},
+
+"affinity_vs_efficacy": {
+"relationship": "high_affinity_does_not_necessarily_mean_high_efficacy",
+"important": true
+},
+
+"potency_vs_efficacy": {
+"relationship": "EC50_and_Emax_are_independent_dimensions"
+},
+
+"full_agonism": {
+"possible_effect": "greater_maximal_CB1_response_than_partial_agonism_in_the_same_assay",
+"caveat": "assay_dependent"
+},
+
+"biased_signaling": {
+"definition": "different_ligands_can_differentially_stabilize_receptor_signaling_states",
+"possible_effects": [
+"different_downstream_signaling",
+"different_functional_profiles"
+]
+},
+
+"receptor_selectivity": {
+"parameters": [
+"CB1",
+"CB2",
+"off_target_receptors"
+],
+"caveat": "selectivity_is_not_determined_by_CB1_affinity_alone"
+}
+},
+
+"known_series_level_observations": {
+
+"indazole_vs_indole": {
+"observation": "some_amino_acid_derived_SCRA_series_show_higher_CB1_activity_for_indazole_relative_to_indole",
+"scope": "specific_series",
+"universal_rule": false
+},
+
+"indole_chain_length": {
+"observation": "historical_indole_SAR_studies_show_strong_dependence_of_activity_on_hydrophobic_chain_length",
+"scope": "specific_scaffolds_and_assays",
+"universal_rule": false
+},
+
+"substituent_effects": {
+"observation": "small_structural_changes_can_produce_large_changes_in_Ki_EC50_or_Emax",
+"reason": "binding_geometry_and_receptor_conformation"
+},
+
+"fluorination_effects": {
+"observation": "fluorination_can_change_electronic_properties_lipophilicity_and_metabolism",
+"scope": "series_dependent",
+"universal_rule": false
+}
+},
+
+"interpretation_rules": {
+
+"rule_01": {
+"statement": "Do_not_infer_CB1_affinity_from_lipophilicity_alone"
+},
+
+"rule_02": {
+"statement": "Do_not_infer_EC50_from_Ki_alone"
+},
+
+"rule_03": {
+"statement": "Do_not_infer_Emax_from_Ki_alone"
+},
+
+"rule_04": {
+"statement": "Do_not_generalize_a_SAR_observation_between_unrelated_SCRA_families"
+},
+
+"rule_05": {
+"statement": "Separate_intrinsic_receptor_pharmacology_from_pharmacokinetics"
+},
+
+"rule_06": {
+"statement": "Separate_parent_drug_activity_from_metabolite_activity"
+},
+
+"rule_07": {
+"statement": "Consider_assay_system_when_comparing_EC50_or_Emax"
+},
+
+"rule_08": {
+"statement": "Consider_stereochemistry_and_regiochemistry"
+},
+
+"rule_09": {
+"statement": "A_more_lipophilic_molecule_is_not_automatically_a_stronger_CB1_agonist"
+},
+
+"rule_10": {
+"statement": "A_structural_change_can_affect_multiple_properties_simultaneously"
+}
+},
+
+"conceptual_model": {
+"structure": [
+"scaffold",
+"substituents",
+"linker",
+"steric_profile",
+"electronic_profile",
+"polarity",
+"lipophilicity",
+"3D_shape"
+],
+"then": [
+"receptor_binding",
+"receptor_conformation",
+"signaling",
+"pharmacokinetics",
+"metabolism"
+],
+"measured_outputs": [
+"Ki",
+"EC50",
+"Emax",
+"selectivity",
+"duration"
+]
+}
+}
